@@ -1,28 +1,26 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from 'react';
+import LightCircuit from './context/LightCircuit';
+import LightBulb from './LightBulb';
+import LightSwitch from './LightSwitch';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
-}
+const App = () => {
+  const [on, toggleOn] = useState(false);
+
+  return (
+    <LightCircuit.Provider
+      value={{
+        state: {on},
+        flipSwitch: () => toggleOn(!on)
+      }}
+    >
+    <div class="App">
+      <LightBulb />
+      <div className="space-20"></div>
+      <LightSwitch />
+    </div>
+
+    </LightCircuit.Provider>
+  );
+};
 
 export default App;
