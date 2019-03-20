@@ -20,9 +20,16 @@ const LightSwitch = (props) => {
                 `light-switch ${(up ? ' up' : ' down') } ${props.className}`
               }
             >
+              <div>
               <div style={{
-                backgroundColor: state.on ? 'green' : 'red'
-              }}>{state.on ? 'On' : 'Off'}</div>
+                      backgroundColor: state.on ? 'green': 'blanchedalmond'
+                    }}>On</div>
+                    <div style={{
+                      backgroundColor: !state.on ? 'red': 'blanchedalmond',
+                      zIndex: 1
+                    }}>Off</div>
+
+              </div>
             </button>
           )
         }

@@ -76,9 +76,11 @@
   margin: auto;
   border: 1px solid #222;
   background-color: #ff2244;
-  color: #fff;
+  /* color: #fff; */
   position: relative;
   line-height: 25px;
+  display: flex;
+    flex-direction: column;
 }
 /* move some stuff around so this works */
 
